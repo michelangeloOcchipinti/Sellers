@@ -10,7 +10,7 @@ public class Sellers {
 	private int age;
 	private float turnover;
 	public static int codSeller;
-	private static Vector sellers=new Vector();
+	private static Vector<Sellers> sellers=new Vector<Sellers>();
 	
 	public Sellers(String name, String surname, int age) {
 		this.name=name;
@@ -18,6 +18,12 @@ public class Sellers {
 		this.age=age;
 		
 															}
+	
+	public Sellers() {
+		
+		
+															}
+	
 	public String toString(){
 		return name+" "+surname+" "+age+" "+turnover;
 	}
@@ -61,7 +67,7 @@ public class Sellers {
 	public static void createSeller(String name, String surname, int age){
 		sellers.addElement(new Sellers(name, surname, age));
 		System.out.println("You have added below seller to this database:\n");
- 		System.out.println(sellers.get(codSeller));
+ 		System.out.println("Name: "+sellers.get(codSeller).getName()+"\n"+"Surname: "+sellers.get(codSeller).getSurname()+"\n"+"Age: "+sellers.get(codSeller).getAge()+"\n");
 		codSeller++;
 		
 	}
